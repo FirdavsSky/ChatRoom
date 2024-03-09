@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "807301071956",
+    "project_id": "chatroom-c3264",
+    "storage_bucket": "chatroom-c3264.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807301071956:android:761d5d602d563bf586d9c1",
+        "android_client_info": {
+          "package_name": "com.firdavs.android.chatroom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTHC0qnPNv9tBoIpEHXd5cI1tgSt6DYeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
