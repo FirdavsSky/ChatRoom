@@ -8,6 +8,7 @@ android {
     namespace = "com.firdavs.android.chatroom"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.firdavs.android.chatroom"
         minSdk = 21
@@ -37,6 +38,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -56,5 +58,10 @@ dependencies {
     implementation("com.google.firebase:firebase-storage-ktx:19.1.1")
     implementation("com.google.firebase:firebase-database-ktx:19.2.1")
     implementation("com.google.firebase:firebase-messaging:20.1.2")
-
+    implementation("de.hdodenhof:circleimageview:2.2.0")
+    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.rengwuxian.materialedittext:library:2.1.4")
+    implementation("com.squareup.retrofit2:retrofit:2.3.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.3.0")
 }
