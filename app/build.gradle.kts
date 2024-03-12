@@ -54,7 +54,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("de.hdodenhof:circleimageview:2.2.0")
-/*
+
     implementation("com.google.firebase:firebase-core:17.2.3")
     implementation("com.google.firebase:firebase-auth:19.2.0")
     implementation("com.google.firebase:firebase-storage-ktx:19.1.1")
@@ -63,7 +63,7 @@ dependencies {
 
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("com.rengwuxian.materialedittext:library:2.1.4")
+    //implementation("com.rengwuxian.materialedittext:library:2.1.4")
     implementation("com.squareup.retrofit2:retrofit:2.3.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.3.0")*/
+    implementation("com.squareup.retrofit2:converter-gson:2.3.0")
 }
