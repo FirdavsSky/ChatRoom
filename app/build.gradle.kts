@@ -55,11 +55,11 @@ dependencies {
 
     implementation("de.hdodenhof:circleimageview:2.2.0")
 
-    implementation("com.google.firebase:firebase-core:17.2.3")
-    implementation("com.google.firebase:firebase-auth:19.2.0")
-    implementation("com.google.firebase:firebase-storage-ktx:19.1.1")
-    implementation("com.google.firebase:firebase-database-ktx:19.2.1")
-    implementation("com.google.firebase:firebase-messaging:20.1.2")
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-auth:22.3.1")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.1")
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
 
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.cardview:cardview:1.0.0")
