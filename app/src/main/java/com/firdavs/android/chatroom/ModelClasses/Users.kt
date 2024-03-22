@@ -12,6 +12,8 @@ class Users {
     private var website: String = ""
 
     constructor()
+
+
     constructor(
         uid: String,
         username: String,
@@ -31,6 +33,78 @@ class Users {
         this.search = search
         this.facebook = facebook
         this.instagram = instagram
+        this.website = website
+    }
+
+    fun getUID(): String?{
+        return uid
+    }
+
+    fun setUID(uid: String){
+        this.uid = uid
+    }
+
+    fun getUserName(): String?{
+        return username
+    }
+
+    fun setUserName(userName: String){
+        this.username = username
+    }
+
+    fun getProfile(): String?{
+        return profile
+    }
+
+    fun setProfile(profile: String){
+        this.profile = profile
+    }
+
+    fun getСover(): String?{
+        return cover
+    }
+
+    fun setСover(cover: String){
+        this.cover = cover
+    }
+
+    fun getStatus(): String?{
+        return status
+    }
+
+    fun setStatus(status: String){
+        this.status = status
+    }
+
+    fun getSearch(): String?{
+        return search
+    }
+
+    fun setSearch(search: String){
+        this.search = search
+    }
+
+    fun getFacebook(): String?{
+        return facebook
+    }
+
+    fun setFacebook(facebook: String){
+        this.facebook = facebook
+    }
+
+    fun getInstagram(): String?{
+        return instagram
+    }
+
+    fun setInstagram(instagram: String){
+        this.instagram = instagram
+    }
+
+    fun getWebsite(): String?{
+        return website
+    }
+
+    fun setWebsite(website: String){
         this.website = website
     }
 }

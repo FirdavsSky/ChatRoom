@@ -8,6 +8,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -16,6 +18,7 @@ import androidx.viewpager.widget.ViewPager
 import com.firdavs.android.chatroom.Fragments.ChatsFragment
 import com.firdavs.android.chatroom.Fragments.SearchFragment
 import com.firdavs.android.chatroom.Fragments.SettingsFragment
+import com.firdavs.android.chatroom.ModelClasses.Users
 import com.firdavs.android.chatroom.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +28,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,6 +54,8 @@ class MainActivity : AppCompatActivity() {
 
         val tabLayout: TabLayout = findViewById(R.id.tab_layout)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
+        val user_name: TextView = findViewById(R.id.user_name)
+        val profile_image: ImageView = findViewById(R.id.profile_image)
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
         viewPagerAdapter.addFragment(ChatsFragment(),"Chats")
@@ -63,7 +70,9 @@ class MainActivity : AppCompatActivity() {
         refUsers!!.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()){
-
+                    val user: Users? = p0.getValue(Users::class.java)
+                    user_name.text = user!!.getUserName()
+                    Picasso.get().load(user.getProfile()).placeholder(R.drawable.profile).into(profile_image)
                 }
             }
 
