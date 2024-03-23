@@ -53,7 +53,7 @@ class SearchFragment : Fragment() {
             }
 
             override fun onTextChanged(cs: CharSequence?, p1: Int, p2: Int, p3: Int) {
-               searchForUsers(cs.toString().toLowerCase())
+                searchForUsers(cs.toString().toLowerCase())
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -68,33 +68,33 @@ class SearchFragment : Fragment() {
 
     private fun retrieveAllUsers() {
 
-            var firebaseUserID = FirebaseAuth.getInstance().currentUser!!.uid
-            val refUsers = FirebaseDatabase.getInstance().reference.child("Users")
+        var firebaseUserID = FirebaseAuth.getInstance().currentUser!!.uid
+        val refUsers = FirebaseDatabase.getInstance().reference.child("Users")
 
-            refUsers.addValueEventListener(object : ValueEventListener{
+        refUsers.addValueEventListener(object : ValueEventListener{
 
-                override fun onDataChange(p0: DataSnapshot) {
-                    (mUsers as ArrayList<Users>).clear()
-                    if (searchEditText!!.text.toString() == ""){
+            override fun onDataChange(p0: DataSnapshot) {
+                (mUsers as ArrayList<Users>).clear()
+                if (searchEditText!!.text.toString() == ""){
 
-                        for (snapshot in p0.children){
-                            val user: Users? = snapshot.getValue(Users::class.java)
-                            if(!(user!!.getUID()).equals(firebaseUserID)){
-                                (mUsers as ArrayList<Users>).add(user)
-                            }
+                    for (snapshot in p0.children){
+                        val user: Users? = snapshot.getValue(Users::class.java)
+                        if(!(user!!.getUID()).equals(firebaseUserID)){
+                            (mUsers as ArrayList<Users>).add(user)
                         }
-                            userAdapter = UserAdapter(context!!,mUsers!!, false)
-                            recyclerView!!.adapter = userAdapter
-
-
                     }
+                    userAdapter = UserAdapter(context!!,mUsers!!, false)
+                    recyclerView!!.adapter = userAdapter
+
+
                 }
+            }
 
-                override fun onCancelled(p0: DatabaseError) {
+            override fun onCancelled(p0: DatabaseError) {
 
-                }
+            }
 
-            })
+        })
 
 
     }
