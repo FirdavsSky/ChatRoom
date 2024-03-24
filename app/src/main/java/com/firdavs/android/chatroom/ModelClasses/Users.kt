@@ -12,8 +12,11 @@ class Users {
     private var website: String = ""
 
     constructor()
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c1a0ac7d1c1159e68850c6312f4816fd72a1a7aa
     constructor(
         uid: String,
         username: String,
@@ -35,6 +38,7 @@ class Users {
         this.instagram = instagram
         this.website = website
     }
+<<<<<<< HEAD
 
     fun getUID(): String?{
         return uid
@@ -107,4 +111,6 @@ class Users {
     fun setWebsite(website: String){
         this.website = website
     }
+=======
+>>>>>>> c1a0ac7d1c1159e68850c6312f4816fd72a1a7aa
 }
