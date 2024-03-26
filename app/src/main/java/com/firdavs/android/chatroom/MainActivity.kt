@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -28,11 +29,10 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-<<<<<<< HEAD
+
 import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
-=======
->>>>>>> c1a0ac7d1c1159e68850c6312f4816fd72a1a7aa
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         firebaseUser = FirebaseAuth.getInstance().currentUser
         refUsers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUser!!.uid)
+
 
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
@@ -73,19 +74,19 @@ class MainActivity : AppCompatActivity() {
         refUsers!!.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()){
-<<<<<<< HEAD
+
                     val user: Users? = p0.getValue(Users::class.java)
                     user_name.text = user!!.getUserName()
                     Picasso.get().load(user.getProfile()).placeholder(R.drawable.profile).into(profile_image)
                 }
             }
 
-=======
 
-                }
-            }
 
->>>>>>> c1a0ac7d1c1159e68850c6312f4816fd72a1a7aa
+
+            
+
+
             override fun onCancelled(error: DatabaseError) {
 
             }
